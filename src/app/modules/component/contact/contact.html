@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <form class="space-y-10" (ngSubmit)="submitContactForm()">
+    <form #contactForm="ngForm" class="space-y-10" (ngSubmit)="contactForm.valid && submitContactForm()">
       <div class="relative">
         <input class="form-input-line w-full pt-6 pb-2 px-0 focus:ring-0 peer" [(ngModel)]="formData.name"
                name="name"
@@ -53,8 +53,11 @@
                   required placeholder=" " rows="3"></textarea>
         <label class="absolute left-0 top-6 text-on-surface-variant/60 font-label-caps text-label-caps uppercase transition-all peer-focus:top-0 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:top-0" for="message">Su Mensaje</label>
       </div>
-      <button class="bg-primary text-surface w-full py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors duration-300" type="submit">Enviar Solicitud</button>
-      <a class="p-[11rem] bg-primary text-surface w-full py-5 font-label-caps text-label-caps uppercase hover:bg-secondary transition-colors duration-300 space-y-10" href="https://api.whatsapp.com/send/?phone=51923238579&text=Hola+nativo+saphi%21+Quisiera+hacer+una+reserva.&type=phone_number&app_absent=0" target="_blank">Consulta Por WhatsApp</a>
+      <button class="bg-primary text-surface w-full py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              [disabled]="contactForm.invalid" type="submit">Enviar Solicitud</button>
+      <a class="bg-primary text-surface w-full py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors duration-300 inline-flex items-center justify-center"
+         href="https://api.whatsapp.com/send/?phone=51923238579&text=Hola+nativo+saphi%21+Quisiera+hacer+una+reserva.&type=phone_number&app_absent=0"
+         target="_blank">Consulta Por WhatsApp</a>
     </form>
 
   </div>

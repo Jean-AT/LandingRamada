@@ -1,20 +1,21 @@
 <nav class="nav-host">
   <div class="nav-inner">
 
-    <a class="nav-brand" href="#home">NATIVO SAPHÍ</a>
+    <a class="nav-brand" href="#home" (click)="onNavClick($event, '#home')">NATIVO SAPHÍ</a>
 
     <div class="nav-links">
       <a
         *ngFor="let link of links"
         [href]="link.href"
         class="nav-link"
+        (click)="onNavClick($event, link.href)"
       >
         {{ link.label }}
       </a>
     </div>
 
-    <button class="nav-cta" >
-      <a href="#contact">Reserva para Evento</a>
+    <button class="nav-cta">
+      <a href="#contact" (click)="onNavClick($event, '#contact')">Reserva para Evento</a>
     </button>
 
   </div>
