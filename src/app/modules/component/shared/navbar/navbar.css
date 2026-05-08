@@ -1,0 +1,121 @@
+/* =========================================
+   NAVBAR — L'Artisan Culinaire
+   Clases propias, no dependen del CDN de Tailwind.
+   Angular usa ViewEncapsulation por defecto, así
+   que estos estilos no se filtran ni son pisados.
+   ========================================= */
+
+:host {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  /* 11/12 del ancho = w-11/12 de Tailwind */
+  width: min(91.666%, 1280px);
+  z-index: 50;
+
+  /* Glassmorphism */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(251, 249, 245, 0.80);
+  border: 1px solid rgba(196, 192, 185, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.07);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  /* Evita que el contenido se desborde */
+  max-width: 100%;
+}
+
+/* ── Brand ── */
+.nav-brand {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #1b1c1a;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+  color: #C5A059;
+}
+
+/* ── Links ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #44474b;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #775a19;
+  border-bottom-color: #775a19;
+}
+
+/* ── CTA Button ── */
+.nav-cta {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1b1c1a;
+  background: transparent;
+  border: 2px solid #C5A059;
+  border-radius: 2px;
+  padding: 10px 22px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #C5A059;
+  color: #ffffff;
+}
+
+.nav-cta:active {
+  opacity: 0.8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-cta {
+    padding: 8px 14px;
+    font-size: 10px;
+  }
+}

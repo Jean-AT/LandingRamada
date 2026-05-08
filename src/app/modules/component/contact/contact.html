@@ -1,0 +1,61 @@
+<section class=" py-section-padding px-16 bg-surface-container-lowest">
+  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-padding items-start">
+    <div>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Hablemos de su Próximo Evento</h2>
+      <div class="space-y-8">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary">location_on</span>
+          <div>
+            <p class="font-label-caps text-label-caps text-secondary mb-1 uppercase">Atelier Principal</p>
+            <p class="font-body-md text-on-surface-variant">Santa Patricia, San Martin de Porres</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary">mail</span>
+          <div>
+            <p class="font-label-caps text-label-caps text-secondary mb-1 uppercase">Consultas</p>
+            <p class="font-body-md text-on-surface-variant">ceciliatasay&#64;gmail.com</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-secondary">call</span>
+          <div>
+            <p class="font-label-caps text-label-caps text-secondary mb-1 uppercase">Teléfono Directo</p>
+            <p class="font-body-md text-on-surface-variant">+51 923 238 579</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="space-y-10" (ngSubmit)="submitContactForm()">
+      <div class="relative">
+        <input class="form-input-line w-full pt-6 pb-2 px-0 focus:ring-0 peer" [(ngModel)]="formData.name"
+               name="name"
+               required placeholder=" " type="text">
+        <label class="absolute left-0 top-6 text-on-surface-variant/60 font-label-caps text-label-caps uppercase transition-all peer-focus:top-0 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:top-0" for="name">Nombre Completo</label>
+      </div>
+      <div class="relative">
+        <input class="form-input-line w-full pt-6 pb-2 px-0 focus:ring-0 peer" [(ngModel)]="formData.email"
+               name="email"
+               required placeholder=" " type="email">
+        <label class="absolute left-0 top-6 text-on-surface-variant/60 font-label-caps text-label-caps uppercase transition-all peer-focus:top-0 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:top-0" for="email">Correo Electrónico</label>
+      </div>
+      <div class="relative">
+        <select class="form-input-line w-full pt-6 pb-2 px-0 focus:ring-0 peer appearance-none" [(ngModel)]="formData.interest" name="interest" required>
+          <option disabled="" selected="" value=""></option>
+          <option value="catering">Catering Gourmet</option>
+          <option value="pastry">Pastelería para Eventos</option>
+        </select>
+        <label class="absolute left-0 top-6 text-on-surface-variant/60 font-label-caps text-label-caps uppercase transition-all peer-focus:top-0 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:top-0" for="service">Servicio de Interés</label>
+      </div>
+      <div class="relative">
+        <textarea class="form-input-line w-full pt-6 pb-2 px-0 focus:ring-0 peer resize-none" [(ngModel)]="formData.message"
+                  name="message"
+                  required placeholder=" " rows="3"></textarea>
+        <label class="absolute left-0 top-6 text-on-surface-variant/60 font-label-caps text-label-caps uppercase transition-all peer-focus:top-0 peer-focus:text-secondary peer-[:not(:placeholder-shown)]:top-0" for="message">Su Mensaje</label>
+      </div>
+      <button class="bg-primary text-surface w-full py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors duration-300" type="submit">Enviar Solicitud</button>
+      <a class="p-[11rem] bg-primary text-surface w-full py-5 font-label-caps text-label-caps uppercase hover:bg-secondary transition-colors duration-300 space-y-10" href="https://api.whatsapp.com/send/?phone=51923238579&text=Hola+nativo+saphi%21+Quisiera+hacer+una+reserva.&type=phone_number&app_absent=0" target="_blank">Consulta Por WhatsApp</a>
+    </form>
+
+  </div>
+</section>
